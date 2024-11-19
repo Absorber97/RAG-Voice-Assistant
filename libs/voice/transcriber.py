@@ -13,6 +13,9 @@ class Transcriber:
     english: bool
     rag_service: Optional['RAGService'] = None
     
+    def __post_init__(self):
+        self.on_transcribe = lambda _: None  # Callback for transcript updates
+    
     def transcribe(self, audio_queue: Queue, result_queue: Queue) -> None:
         """Transcribe audio from queue"""
         while True:
@@ -28,6 +31,9 @@ class Transcriber:
                 text = result["text"].strip()
                 if self._contains_wake_word(text):
                     question = self._clean_text(text)
+                    
+                    # Notify UI of new transcript
+                    self.on_transcribe(question)
                     
                     # Get answer from RAG if available
                     if self.rag_service:

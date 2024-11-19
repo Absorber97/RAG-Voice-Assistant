@@ -18,12 +18,16 @@ class Responder:
     def __post_init__(self):
         self.client = OpenAI(api_key=self.api_key)
         self.temp_dir.mkdir(parents=True, exist_ok=True)
+        self.on_respond = lambda _: None  # Callback for response updates
         
     def process_responses(self, result_queue: Queue) -> None:
         """Process responses from queue"""
         while True:
             text = result_queue.get()
             try:
+                # Notify UI of new response
+                self.on_respond(text)
+                # Convert to speech and play
                 self.speak(text)
             except Exception as e:
                 print(f"Response error: {e}")
