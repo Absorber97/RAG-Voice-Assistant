@@ -2,6 +2,9 @@
 
 A multimodal AI assistant that combines document-based knowledge (RAG) with voice interaction capabilities. The application provides both text and voice interfaces for interacting with your documents.
 
+- Google Slides: https://docs.google.com/presentation/d/1PiSsG3VFGuXfHst_HYyN9FvGd1R3wH8mIcFOeDFgkm4/edit?usp=sharing
+- Google Slides (PDF): https://drive.google.com/file/d/1FnMFZ50_kvov9dZYm_CuY7_408B56q_J/view?usp=sharing
+
 ## Features
 
 - 💬 **Chat Interface**: Text-based interaction with your documents
