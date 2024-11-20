@@ -100,6 +100,7 @@ Key settings can be configured through environment variables or the settings int
 
 ## Project Structure
 
+```
 .
 ├── libs/
 │ ├── rag/ # RAG implementation
@@ -114,7 +115,7 @@ Key settings can be configured through environment variables or the settings int
 │ ├── temp/ # Temporary files
 │ └── chroma/ # Vector store
 └── streamlit_app.py # Main application
-
+```
 
 
 ## Dependencies
